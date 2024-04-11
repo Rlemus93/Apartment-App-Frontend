@@ -1,17 +1,23 @@
 import "./App.css"
-import React, { useState } from "react"
-import mockUsers from "./mockUsers.js"
-import mockApartments from "./mockApartments.js"
-import HomeSteadLiving from "./assets/HomeSteadLiving.png"
+import React from "react"
+// import mockUsers from "./mockUsers.js"
+// import mockApartments from "./mockApartments.js"
+import { Routes, Route } from "react-router-dom"
+import Header from "./components/Header.js"
+import Home from "./pages/Home.js"
+import Footer from "./components/Footer.js"
 
 const App = () => {
-  const [currentUser, setCurrentUser] = useState(mockUsers[0])
-  const [apartments, setApartments] = useState(mockApartments)
+  // const [currentUser, setCurrentUser] = useState(mockUsers[0])
+  // const [apartments, setApartments] = useState(mockApartments)
 
   return (
     <>
-      <h3>Apartment App</h3>
-      <img src={HomeSteadLiving} />
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+      <Footer />
     </>
   )
 }
