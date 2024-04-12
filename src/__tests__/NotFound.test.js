@@ -12,7 +12,7 @@ test("renders the NotFound component", () => {
   )
 
   const notFoundHeroImage = screen.getByAltText(
-    'underneath text reading "404 error", animated cow smiling "'
+    'underneath text reading "404 error", animated cow smiling'
   )
   expect(notFoundHeroImage).toBeInTheDocument()
   expect(notFoundHeroImage).toHaveAttribute("src", notFoundImage)
