@@ -11,7 +11,7 @@ let mockApartments = [
     bathrooms: 2.0,
     pets: "yes!",
     image:
-      "https://images.unsplash.com/photo-1469022563428-aa04fef9f5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80",
+      "https://blog.newhomesource.com/wp-content/uploads/2019/09/farmhouse.jpg.webp",
     user_id: 1,
   },
   {
@@ -26,11 +26,11 @@ let mockApartments = [
     bathrooms: 2.0,
     pets: "yes!",
     image:
-      "https://images.unsplash.com/photo-1469022563428-aa04fef9f5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80",
+      "https://ap.rdcpix.com/dbed72bc842f6814dba4a7e66c8c2b50l-m2406391074od-w480_h360.jpg",
     user_id: 1,
   },
   {
-    id: 2,
+    id: 3,
     street: "415 Rainbow Street",
     unit: "3B",
     city: "San Diego",
@@ -41,7 +41,52 @@ let mockApartments = [
     bathrooms: 2.0,
     pets: "small pets okay",
     image:
-      "https://images.unsplash.com/photo-1469022563428-aa04fef9f5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80",
+      "https://cdn.landsearch.com/listings/4wHBq/small/calpine-ca-111976379.jpg",
+    user_id: 2,
+  },
+  {
+    id: 4,
+    street: "415 Rainbow Street",
+    unit: "3B",
+    city: "San Diego",
+    state: "CA",
+    square_footage: 400,
+    price: "2000",
+    bedrooms: 1,
+    bathrooms: 2.0,
+    pets: "small pets okay",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZJhrNb9NEfE4wGaH9TwqD_ftxv27tGRNCPjXcKJwDIg&s",
+    user_id: 2,
+  },
+  {
+    id: 5,
+    street: "415 Rainbow Street",
+    unit: "3B",
+    city: "San Diego",
+    state: "CA",
+    square_footage: 400,
+    price: "2000",
+    bedrooms: 1,
+    bathrooms: 2.0,
+    pets: "small pets okay",
+    image:
+      "https://www.zhcustomhomes.com/wp-content/uploads/slider6/Zbranek-and-Holt-Custom-Homes-Modern-Farm-House-Golf-Course-Horseshoe-Bay-Front-Exterior.jpeg",
+    user_id: 2,
+  },
+  {
+    id: 6,
+    street: "415 Rainbow Street",
+    unit: "3B",
+    city: "San Diego",
+    state: "CA",
+    square_footage: 400,
+    price: "2000",
+    bedrooms: 1,
+    bathrooms: 2.0,
+    pets: "small pets okay",
+    image:
+      "https://cdn.landsearch.com/listings/4wHBq/small/calpine-ca-111976379.jpg",
     user_id: 2,
   },
 ]
