@@ -60,6 +60,20 @@
 
 /* pages */
 
+/* Not Found */
+
+.not-found-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 8rem; */
+}
+
+.not-found-image {
+  height: 65dvh;
+  margin-top: 8rem;
+}
+
 /* Home */
 
 button {
