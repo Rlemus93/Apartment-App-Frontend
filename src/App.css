@@ -1,34 +1,45 @@
+:root {
+  --clr-bckgrnd-gold: #cba86b;
+}
+
 * {
   margin: 0;
 }
 
 /* nav/header */
 .nav-cont {
-  flex-direction: row !important;
+  flex-direction: row;
   justify-content: space-between;
-  padding: 1.5% 2.5%;
-  height: 10dvh;
-  position: relative;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  z-index: 100;
 }
+
 .logo-cont {
   display: flex;
   align-items: center;
 }
+
 .homestead-logo {
-  top: 1vh;
-  position: absolute;
-  width: 15.5vw;
-  left: 2vw;
-  z-index: 2;
+  width: 10vw;
 }
+
 .nav-links {
   display: flex;
-  justify-content: start;
-  gap: 1.5vw;
+  align-items: center;
+  gap: 20px;
+  font-family: "PT Serif", serif;
 }
+
 .nav-link {
-  height: fit-content;
-  font-size: 2.5vh !important;
+  font-size: 25px;
+  color: black;
+}
+
+.nav-link:hover {
+  color: #cba86b;
+  transform: scale(1.1);
 }
 
 /* Footer */
@@ -47,3 +58,173 @@
   text-decoration: none;
 }
 
+/* pages */
+
+/* Not Found */
+
+.not-found-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 8rem; */
+}
+
+.not-found-image {
+  height: 65dvh;
+  margin-top: 8rem;
+}
+
+/* Home */
+
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+button.learn-more {
+  width: 12rem;
+  height: auto;
+}
+
+button.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #282936;
+  border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
+
+button.learn-more .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: #282936;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+button:hover .circle {
+  width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+  background: #fff;
+  transform: translate(1rem, 0);
+}
+
+button:hover .button-text {
+  color: #fff;
+}
+
+.home-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.home-cards {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.home-cards > * {
+  margin-right: 20px;
+}
+
+.home-cards > *:last-child {
+  margin-right: 0;
+}
+
+.home-cards > *:hover {
+  transform: scale(1.1);
+}
+
+.homestead-living {
+  color: #cba86b;
+  letter-spacing: 2px;
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+.home-title {
+  position: relative;
+  background-image: url("./assets/farmhouse.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 80vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.sub-header {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.title-h1 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "PT Serif", serif;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}

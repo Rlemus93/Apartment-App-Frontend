@@ -5,7 +5,9 @@ import React from "react"
 import { Routes, Route } from "react-router-dom"
 import Header from "./components/Header.js"
 import Home from "./pages/Home.js"
+import Index from "./pages/Index.js"
 import Footer from "./components/Footer.js"
+import NotFound from "./pages/NotFound.js"
 
 const App = () => {
   // const [currentUser, setCurrentUser] = useState(mockUsers[0])
@@ -16,6 +18,9 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/apartments" element={<Index />} />
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>

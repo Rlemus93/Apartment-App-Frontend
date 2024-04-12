@@ -20,7 +20,7 @@ test("renders Header component logo and appropriate links", () => {
   expect(signInLink).toBeInTheDocument()
   expect(signInLink.getAttribute("href")).toBe("/signin")
 
-  const joinNowLink = screen.getByText(/join now/i)
-  expect(joinNowLink).toBeInTheDocument()
-  expect(joinNowLink.getAttribute("href")).toBe("/joinnow")
+  const signUpButton = screen.getByText(/sign up/i)
+  expect(signUpButton).toBeInTheDocument()
+  expect(signUpButton.getAttribute("href")).toBe("/signup")
 })
