@@ -34,7 +34,10 @@ const Home = () => {
               width: "18rem",
             }}
           >
-            <img alt="Sample" src={apartment.image} />
+            <img
+              alt={`Photo of house ${apartment.street}`}
+              src={apartment.image}
+            />
             <CardBody>
               <CardTitle tag="h5">{apartment.street}</CardTitle>
               <CardSubtitle className="mb-2 text-muted" tag="h6">
@@ -79,7 +82,7 @@ const Home = () => {
             fontWeight: "700",
           }}
         >
-          Benefits to Homestead h
+          Benefits to Homestead
         </h3>
       </div>
     </div>
