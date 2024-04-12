@@ -7,7 +7,7 @@ const NotFound = () => {
       <img
         className="not-found-image"
         src={notFoundImage}
-        alt='underneath text reading "404 error", animated cow smiling "'
+        alt='underneath text reading "404 error", animated cow smiling'
       />
     </div>
   )
