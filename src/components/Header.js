@@ -1,8 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import homesteadLogo from "../assets/HomeSteadLiving.png"
 import React from "react"
-import { Nav } from "reactstrap"
-import { NavLink } from "react-router-dom"
+import { Nav, Button } from "reactstrap"
+import { Link, NavLink } from "react-router-dom"
 
 const Header = () => {
   return (
@@ -23,9 +23,21 @@ const Header = () => {
         <NavLink to="/signin" className="nav-link">
           Sign In
         </NavLink>
-        <NavLink to="/joinnow" className="nav-link">
-          Join Now
-        </NavLink>
+        <Button
+          tag={Link}
+          to="/signup"
+          className="nav-link"
+          style={{
+            borderRadius: "20px",
+            padding: "10px 20px",
+            backgroundColor: "#CBA86B",
+            color: "black",
+            border: "none",
+            marginRight: "2rem",
+          }}
+        >
+          Sign Up
+        </Button>
       </div>
     </Nav>
   )
