@@ -257,3 +257,17 @@ button:hover .button-text {
   margin-top: 15vh;
   text-align: center;
 }
+
+/* Show page */
+
+.show-cont {
+  min-height: calc(100dvh - 10dvh);
+  display: flex;
+  flex-direction: column;
+  padding: 5dvh;
+}
+
+.show-title {
+  margin-top: 15vh;
+  text-align: center;
+}
