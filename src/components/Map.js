@@ -12,26 +12,12 @@ const center = {
 }
 
 const GOOGLE_MAPS_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY
-console.log(GOOGLE_MAPS_API_KEY)
 
 const Map = () => {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: GOOGLE_MAPS_API_KEY,
   })
-
-  const [map, setMap] = React.useState(null)
-
-  const onLoad = React.useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds(center)
-    map.fitBonds(bounds)
-
-    setMap(map)
-  }, [])
-
-  const onUnmount = React.useCallback(function callback(map) {
-    setMap(null)
-  }, [])
 
   return isLoaded ? (
     <div>
@@ -40,8 +26,6 @@ const Map = () => {
         center={center}
         zoom={6}
         position={center}
-        // onLoad={onLoad}
-        onUnmount={onUnmount}
       />
     </div>
   ) : null
