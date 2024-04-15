@@ -43,7 +43,7 @@ test("renders Home component ", () => {
   expect(viewMoreButton).toBeInTheDocument()
   expect(screen.getByRole("link", { name: "View More" })).toHaveAttribute(
     "href",
-    "/apartments"
+    "/index"
   )
 
   const subHeaderTwo = screen.getByText(

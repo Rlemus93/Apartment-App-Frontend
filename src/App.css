@@ -10,7 +10,6 @@
 .nav-cont {
   flex-direction: row;
   justify-content: space-between;
-  position: fixed;
   width: 100%;
   background-color: white;
   z-index: 100;
@@ -66,12 +65,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-top: 8rem; */
 }
 
 .not-found-image {
   height: 65dvh;
-  margin-top: 8rem;
 }
 
 /* Home */
@@ -174,7 +171,6 @@ button:hover .button-text {
 }
 
 .home-cards {
-  margin-top: auto;
   display: flex;
   justify-content: center;
 }
@@ -204,7 +200,7 @@ button:hover .button-text {
   background-size: cover;
   background-position: center;
   width: 100vw;
-  height: 80vh;
+  height: 60vh;
   color: white;
   display: flex;
   align-items: center;
@@ -227,4 +223,50 @@ button:hover .button-text {
   font-size: 3rem;
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Index */
+
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
+
+.index-cont {
+  min-height: calc(100dvh - 10dvh);
+  display: flex;
+  flex-direction: column;
+  padding: 5dvh;
+}
+
+.index-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4dvw;
+  padding: 7vh 5vw;
+  text-align: center;
+}
+
+.index-title {
+  text-align: center;
+}
+
+/* Show page */
+
+.about-me-div {
+  float: right;
+  padding: 2rem;
+  width: 30%;
+  text-align: center;
+}
+
+.card-div {
+  width: 70%;
+}
+
+.show-cont {
+  display: flex;
+  padding: 5dvh;
 }
