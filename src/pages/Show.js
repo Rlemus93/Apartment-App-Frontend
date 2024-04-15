@@ -37,7 +37,7 @@ const Show = ({ apartments }) => {
               <small className="text-muted">Pets Allowed: {apt.pets}</small>
             </CardText>
           </CardBody>
-          <Link to={`/index/`} className="learn-more">
+          <Link to="/index" className="learn-more">
             <Button>Back</Button>
           </Link>
         </Card>

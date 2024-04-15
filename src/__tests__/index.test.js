@@ -6,7 +6,7 @@ import mockApartments from "../mockApartments"
 test("renders Home component ", () => {
   render(
     <BrowserRouter>
-      <Index />
+      <Index apartments={mockApartments} />
     </BrowserRouter>
   )
 

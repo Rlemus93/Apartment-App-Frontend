@@ -32,6 +32,6 @@ test("renders Show component ", () => {
 
   const backButton = screen.getAllByRole("link", { name: "Back" })
   backButton.forEach((linkElement) => {
-    expect(linkElement).toHaveAttribute("href", `/index/`)
+    expect(linkElement).toHaveAttribute("href", `/index`)
   })
 })

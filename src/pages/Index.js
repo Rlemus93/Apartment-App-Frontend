@@ -1,5 +1,5 @@
 import React from "react"
-import mockApartments from "../mockApartments"
+
 import {
   Card,
   CardBody,
@@ -10,12 +10,12 @@ import {
 } from "reactstrap"
 import { Link } from "react-router-dom"
 
-const Index = () => {
+const Index = ({ apartments }) => {
   return (
     <div className="index-cont">
       <h1 className="index-title">Available Homes</h1>
       <div className="index-cards">
-        {mockApartments.map((apartment) => (
+        {apartments.map((apartment) => (
           <Card
             key={apartment.id}
             style={{
