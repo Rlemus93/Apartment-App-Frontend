@@ -33,10 +33,24 @@ const Header = () => {
             backgroundColor: "#CBA86B",
             color: "black",
             border: "none",
-            marginRight: "2rem",
           }}
         >
           Sign Up
+        </Button>
+        <Button
+          tag={Link}
+          to="/"
+          className="nav-link"
+          style={{
+            borderRadius: "20px",
+            padding: "10px 20px",
+            backgroundColor: "#CBA86B",
+            color: "black",
+            border: "none",
+            marginRight: "2rem",
+          }}
+        >
+          Sign Out
         </Button>
       </div>
     </Nav>
