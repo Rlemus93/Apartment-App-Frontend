@@ -2,6 +2,7 @@ import React from "react"
 import { Card, CardBody, CardTitle, CardSubtitle, CardText } from "reactstrap"
 import mockApartments from "../mockApartments"
 import { NavLink } from "react-router-dom"
+import Map from "../components/Map"
 
 const Home = () => {
   return (
@@ -84,6 +85,7 @@ const Home = () => {
         >
           Benefits to Homestead
         </h3>
+        <Map />
       </div>
     </div>
   )
