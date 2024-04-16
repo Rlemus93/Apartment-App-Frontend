@@ -53,16 +53,16 @@ const SignUp = ({ signUp }) => {
           )}
         </FormGroup>
         <FormGroup>
-          <Label for="Password_Confirmation">Password Confirmation</Label>
+          <Label for="password_confirmation">Password Confirmation</Label>
           <input
-            id="Password_Confirmation"
-            name="Password_Confirmation"
+            id="password_confirmation"
+            name="password_confirmation"
             placeholder="Password Confirmation"
             type="Password"
             className="form-control"
-            {...register("Password_Confirmation", { required: true })}
+            {...register("password_confirmation", { required: true })}
           />
-          {errors.enjoys && (
+          {errors.password_confirmation && (
             <span className="form-validations">
               Password Confirmation is required
             </span>

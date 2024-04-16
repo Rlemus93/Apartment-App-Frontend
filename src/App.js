@@ -15,14 +15,13 @@ import NotFound from "./pages/NotFound.js"
 const App = () => {
   const [apartments, setApartments] = useState(mockApartments)
   const [currentUser, setCurrentUser] = useState(null)
-  console.log(currentUser)
 
-  // useEffect(() => {
-  //   const loggedInUser = localStorage.getItem("currentUser")
-  //   if (loggedInUser) {
-  //     setCurrentUser(JSON.parse(loggedInUser))
-  //   }
-  // }, [])
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("currentUser")
+    if (loggedInUser) {
+      setCurrentUser(JSON.parse(loggedInUser))
+    }
+  }, [])
 
   const signIn = async (user) => {
     try {
@@ -38,7 +37,6 @@ const App = () => {
         throw new Error(signInResponse.errors)
       }
       const payload = await signInResponse.json()
-      console.log(payload)
       localStorage.setItem("token", signInResponse.headers.get("Authorization"))
       localStorage.setItem("user", JSON.stringify(payload))
       setCurrentUser(payload)
@@ -48,7 +46,6 @@ const App = () => {
   }
 
   const signUp = async (currentUser) => {
-    console.log(currentUser)
     try {
       const signUpResponse = await fetch("http://localhost:3000/signup", {
         method: "POST",
@@ -62,7 +59,6 @@ const App = () => {
         throw new Error(signUpResponse.errors)
       }
       const payload = await signUpResponse.json()
-      console.log(payload)
       localStorage.setItem("token", signUpResponse.headers.get("Authorization"))
       localStorage.setItem("currentUser", JSON.stringify(payload))
       setCurrentUser(payload)
