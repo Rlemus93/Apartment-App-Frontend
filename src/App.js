@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom"
 import Header from "./components/Header.js"
 import SignUp from "./pages/SignUp.js"
 import SignIn from "./pages/SignIn.js"
+import New from "./pages/New.js"
 import Home from "./pages/Home.js"
 import Index from "./pages/Index.js"
 import Show from "./pages/Show.js"
@@ -89,6 +90,10 @@ const App = () => {
     }
   }
 
+  const createHomeStead = async (apartment) => {
+    console.log(apartment)
+  }
+
   return (
     <>
       <Header currentUser={currentUser} signOut={signOut} />
@@ -101,6 +106,17 @@ const App = () => {
             path="/myhomesteads"
             element={
               <MyHomesteads apartments={apartments} currentUser={currentUser} />
+            }
+          />
+        )}
+        {currentUser && (
+          <Route
+            path="/new"
+            element={
+              <New
+                createHomeStead={createHomeStead}
+                currentUser={currentUser}
+              />
             }
           />
         )}
