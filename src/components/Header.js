@@ -26,38 +26,38 @@ const Header = ({ signOut, currentUser }) => {
           </NavLink>
         )}
         {!currentUser && (
-          <Button
-            tag={Link}
-            to="/signup"
-            className="nav-link"
-            style={{
-              borderRadius: "20px",
-              padding: "10px 20px",
-              backgroundColor: "#CBA86B",
-              color: "black",
-              border: "none",
-            }}
-          >
-            Sign Up
-          </Button>
+          <Link to={"/signup"}>
+            <Button
+              className="nav-link"
+              style={{
+                borderRadius: "20px",
+                padding: "10px 20px",
+                backgroundColor: "#CBA86B",
+                color: "black",
+                border: "none",
+              }}
+            >
+              Sign Up
+            </Button>
+          </Link>
         )}
         {currentUser && (
-          <Button
-            tag={Link}
-            to="/"
-            className="nav-link"
-            style={{
-              borderRadius: "20px",
-              padding: "10px 20px",
-              backgroundColor: "#CBA86B",
-              color: "black",
-              border: "none",
-              marginRight: "2rem",
-            }}
-            onClick={signOut}
-          >
-            Sign Out
-          </Button>
+          <Link to={"/"}>
+            <Button
+              className="nav-link"
+              style={{
+                borderRadius: "20px",
+                padding: "10px 20px",
+                backgroundColor: "#CBA86B",
+                color: "black",
+                border: "none",
+                marginRight: "2rem",
+              }}
+              onClick={signOut}
+            >
+              Sign Out
+            </Button>
+          </Link>
         )}
       </div>
     </Nav>
