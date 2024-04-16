@@ -15,7 +15,7 @@ const SignIn = ({ signIn }) => {
   } = useForm({ defaultValues: preloadedValues })
 
   const onSubmit = (formData) => {
-    signIn({ currentUser: formData })
+    signIn({ user: formData })
     navigate("/")
   }
 

@@ -16,7 +16,7 @@ const SignUp = ({ signUp }) => {
   } = useForm({ defaultValues: preloadedValues })
 
   const onSubmit = (newUser) => {
-    signUp({ currentUser: newUser })
+    signUp({ user: newUser })
     navigate("/")
   }
 

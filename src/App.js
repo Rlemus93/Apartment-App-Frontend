@@ -15,38 +15,60 @@ import NotFound from "./pages/NotFound.js"
 const App = () => {
   const [apartments, setApartments] = useState(mockApartments)
   const [currentUser, setCurrentUser] = useState(null)
+  console.log(currentUser)
 
-  useEffect(() => {
-    const loggedInUser = localStorage.getItem("currentUser")
-    if (loggedInUser) {
-      setCurrentUser(JSON.parse(loggedInUser))
-    }
-  }, [])
+  // useEffect(() => {
+  //   const loggedInUser = localStorage.getItem("currentUser")
+  //   if (loggedInUser) {
+  //     setCurrentUser(JSON.parse(loggedInUser))
+  //   }
+  // }, [])
 
-  const signIn = async (currentUser) => {
+  const signIn = async (user) => {
     try {
       const signInResponse = await fetch("http://localhost:3000/login", {
         method: "POST",
-        header: {
+        headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify(currentUser),
+        body: JSON.stringify(user),
       })
       if (!signInResponse) {
         throw new Error(signInResponse.errors)
       }
       const payload = await signInResponse.json()
+      console.log(payload)
       localStorage.setItem("token", signInResponse.headers.get("Authorization"))
-      localStorage.setItem("currentUser", JSON.stringify(payload))
+      localStorage.setItem("user", JSON.stringify(payload))
       setCurrentUser(payload)
     } catch (error) {
       console.log("error fetching sign in data")
     }
   }
 
-  const signUp = (currentUser) => {
+  const signUp = async (currentUser) => {
     console.log(currentUser)
+    try {
+      const signUpResponse = await fetch("http://localhost:3000/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(currentUser),
+      })
+      if (!signUpResponse) {
+        throw new Error(signUpResponse.errors)
+      }
+      const payload = await signUpResponse.json()
+      console.log(payload)
+      localStorage.setItem("token", signUpResponse.headers.get("Authorization"))
+      localStorage.setItem("currentUser", JSON.stringify(payload))
+      setCurrentUser(payload)
+    } catch (error) {
+      console.log("error fetching sign up data")
+    }
   }
 
   return (
