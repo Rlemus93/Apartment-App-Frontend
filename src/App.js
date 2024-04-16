@@ -11,6 +11,7 @@ import Index from "./pages/Index.js"
 import Show from "./pages/Show.js"
 import Footer from "./components/Footer.js"
 import NotFound from "./pages/NotFound.js"
+import MyHomesteads from "./pages/MyHomesteads.js"
 
 const App = () => {
   const [apartments, setApartments] = useState(mockApartments)
@@ -95,6 +96,14 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/index" element={<Index apartments={apartments} />} />
         <Route path="/show/:id" element={<Show apartments={apartments} />} />
+        {currentUser && (
+          <Route
+            path="/myhomesteads"
+            element={
+              <MyHomesteads apartments={apartments} currentUser={currentUser} />
+            }
+          />
+        )}
         <Route path="/signin" element={<SignIn signIn={signIn} />} />
         <Route path="/signup" element={<SignUp signUp={signUp} />} />
         <Route path="*" element={<NotFound />} />

@@ -25,6 +25,11 @@ const Header = ({ signOut, currentUser }) => {
             Sign In
           </NavLink>
         )}
+        {currentUser && (
+          <NavLink to="/myhomesteads" className="nav-link">
+            My Homesteads
+          </NavLink>
+        )}
         {!currentUser && (
           <Button
             tag={Link}
