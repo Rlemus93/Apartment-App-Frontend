@@ -1,6 +1,6 @@
 import "./App.css"
-import React, { useState } from "react"
-// import mockUsers from "./mockUsers.js"
+import React, { useState, useEffect } from "react"
+import mockUsers from "./mockUsers.js"
 import mockApartments from "./mockApartments.js"
 import { Routes, Route } from "react-router-dom"
 import Header from "./components/Header.js"
@@ -13,11 +13,36 @@ import Footer from "./components/Footer.js"
 import NotFound from "./pages/NotFound.js"
 
 const App = () => {
-  const [currentUser, setCurrentUser] = useState(null)
   const [apartments, setApartments] = useState(mockApartments)
+  const [currentUser, setCurrentUser] = useState(null)
 
-  const signIn = (currentUser) => {
-    console.log(currentUser)
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("currentUser")
+    if (loggedInUser) {
+      setCurrentUser(JSON.parse(loggedInUser))
+    }
+  }, [])
+
+  const signIn = async (currentUser) => {
+    try {
+      const signInResponse = await fetch("http://localhost:3000/login", {
+        method: "POST",
+        header: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(currentUser),
+      })
+      if (!signInResponse) {
+        throw new Error(signInResponse.errors)
+      }
+      const payload = await signInResponse.json()
+      localStorage.setItem("token", signInResponse.headers.get("Authorization"))
+      localStorage.setItem("currentUser", JSON.stringify(payload))
+      setCurrentUser(payload)
+    } catch (error) {
+      console.log("error fetching sign in data")
+    }
   }
 
   const signUp = (currentUser) => {
@@ -26,7 +51,7 @@ const App = () => {
 
   return (
     <>
-      <Header />
+      <Header currentUser={currentUser} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/index" element={<Index apartments={apartments} />} />

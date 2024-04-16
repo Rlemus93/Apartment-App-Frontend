@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 const SignIn = ({ signIn }) => {
   const navigate = useNavigate()
   const preloadedValues = {
-    email: "test@example.com",
+    email: "test1@example.com",
     password: "password",
   }
   const {
@@ -21,7 +21,7 @@ const SignIn = ({ signIn }) => {
 
   return (
     <div className="edit-cont">
-      <h2 className="title-header center-content">Create an Account</h2>
+      <h2 className="title-header center-content">Sign In</h2>
       <Form onSubmit={handleSubmit(onSubmit)} className="form-cont">
         <FormGroup>
           <Label for="email">Enter Your Email</Label>
