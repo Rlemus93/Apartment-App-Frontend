@@ -71,9 +71,30 @@ const App = () => {
     }
   }
 
+  const signOut = async () => {
+    try {
+      const signOutResponse = await fetch("http://localhost:3000/logout", {
+        medod: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: localStorage.getItem("token"),
+        },
+      })
+      if (!signOutResponse) {
+        throw new Error(signOutResponse.errors)
+      }
+      await signOutResponse.json()
+      setCurrentUser(null)
+      localStorage.removeItem("token")
+      localStorage.removeItem("user")
+    } catch (error) {
+      console.log("error fetching log out data")
+    }
+  }
+
   return (
     <>
-      <Header currentUser={currentUser} />
+      <Header currentUser={currentUser} signOut={signOut} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/index" element={<Index apartments={apartments} />} />
