@@ -4,7 +4,7 @@ import React from "react"
 import { Nav, Button } from "reactstrap"
 import { Link, NavLink } from "react-router-dom"
 
-const Header = () => {
+const Header = ({ signOut, currentUser }) => {
   return (
     <Nav className="nav-cont" navbar>
       <div className="logo-cont">
@@ -20,38 +20,45 @@ const Header = () => {
         <NavLink to="/index" className="nav-link">
           Available Homesteads
         </NavLink>
-        <NavLink to="/signin" className="nav-link">
-          Sign In
-        </NavLink>
-        <Button
-          tag={Link}
-          to="/signup"
-          className="nav-link"
-          style={{
-            borderRadius: "20px",
-            padding: "10px 20px",
-            backgroundColor: "#CBA86B",
-            color: "black",
-            border: "none",
-          }}
-        >
-          Sign Up
-        </Button>
-        <Button
-          tag={Link}
-          to="/"
-          className="nav-link"
-          style={{
-            borderRadius: "20px",
-            padding: "10px 20px",
-            backgroundColor: "#CBA86B",
-            color: "black",
-            border: "none",
-            marginRight: "2rem",
-          }}
-        >
-          Sign Out
-        </Button>
+        {!currentUser && (
+          <NavLink to="/signin" className="nav-link">
+            Sign In
+          </NavLink>
+        )}
+        {!currentUser && (
+          <Button
+            tag={Link}
+            to="/signup"
+            className="nav-link"
+            style={{
+              borderRadius: "20px",
+              padding: "10px 20px",
+              backgroundColor: "#CBA86B",
+              color: "black",
+              border: "none",
+            }}
+          >
+            Sign Up
+          </Button>
+        )}
+        {currentUser && (
+          <Button
+            tag={Link}
+            to="/"
+            className="nav-link"
+            style={{
+              borderRadius: "20px",
+              padding: "10px 20px",
+              backgroundColor: "#CBA86B",
+              color: "black",
+              border: "none",
+              marginRight: "2rem",
+            }}
+            onClick={signOut}
+          >
+            Sign Out
+          </Button>
+        )}
       </div>
     </Nav>
   )
