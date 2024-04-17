@@ -10,7 +10,7 @@ import {
 } from "reactstrap"
 import { Link } from "react-router-dom"
 
-const Show = ({ apartments }) => {
+const Show = ({ apartments, currentUser }) => {
   const { id } = useParams()
   const apt = apartments.find((aptObject) => aptObject.id === +id)
 
@@ -40,6 +40,11 @@ const Show = ({ apartments }) => {
           <Link to="/index" className="learn-more">
             <Button>Back</Button>
           </Link>
+          {currentUser && currentUser.id === apt.user_id && (
+            <Link to={`/edit/${id}`} className="learn-more">
+              <Button>Edit</Button>
+            </Link>
+          )}
         </Card>
       </div>
       <div className="about-me-div">

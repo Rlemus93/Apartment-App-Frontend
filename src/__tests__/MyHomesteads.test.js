@@ -40,7 +40,7 @@ test("renders Home component ", () => {
 
   const editButtons = screen.getAllByRole("link", { name: "Edit" })
   editButtons.forEach((linkElement) => {
-    expect(linkElement).toHaveAttribute("href", "/edit")
+    expect(linkElement).toHaveAttribute("href", "/edit/:id")
   })
 
   const deleteButtons = screen.getAllByRole("button", { name: "Delete" })
