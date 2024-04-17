@@ -1,10 +1,8 @@
 import React from "react"
 import { Card, CardBody, CardTitle, CardSubtitle, CardText } from "reactstrap"
-import mockApartments from "../mockApartments"
 import { NavLink } from "react-router-dom"
-import Map from "../components/Map"
 
-const Home = () => {
+const Home = ({ apartments }) => {
   return (
     <div className="home-cont">
       <div className="home-title">
@@ -28,7 +26,7 @@ const Home = () => {
         </h3>
       </div>
       <div className="home-cards">
-        {mockApartments.slice(0, 4).map((apartment) => (
+        {apartments.slice(0, 4).map((apartment) => (
           <Card
             key={apartment.id}
             style={{

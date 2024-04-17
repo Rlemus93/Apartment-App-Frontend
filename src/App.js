@@ -1,7 +1,7 @@
 import "./App.css"
 import React, { useState, useEffect } from "react"
-import mockUsers from "./mockUsers.js"
-import mockApartments from "./mockApartments.js"
+// import mockUsers from "./mockUsers.js"
+// import mockApartments from "./mockApartments.js"
 import { Routes, Route } from "react-router-dom"
 import Header from "./components/Header.js"
 import SignUp from "./pages/SignUp.js"
@@ -16,7 +16,10 @@ import NotFound from "./pages/NotFound.js"
 import MyHomesteads from "./pages/MyHomesteads.js"
 
 const App = () => {
-  const [apartments, setApartments] = useState(mockApartments)
+  const [apartments, setApartments] = useState([])
+  useEffect(() => {
+    getApartments()
+  }, [])
   const [currentUser, setCurrentUser] = useState(null)
 
   useEffect(() => {
@@ -91,23 +94,82 @@ const App = () => {
     }
   }
 
-  const createHomeStead = async (apartment) => {
-    console.log(apartment)
+  const getApartments = async () => {
+    try {
+      const getResponse = await fetch("http://localhost:3000/apartments")
+      if (!getResponse.ok) {
+        throw new Error("Error on the get request for apartments")
+      }
+      const getResult = await getResponse.json()
+      setApartments(getResult)
+    } catch (error) {
+      alert("Ooops something went wrong", error.message)
+    }
   }
 
-  const updateHomeStead = async (apartment) => {
-    console.log(apartment)
+  const createHomeStead = async (homesteadProfile) => {
+    try {
+      const postResponse = await fetch("http://localhost:3000/apartments", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(homesteadProfile),
+      })
+      if (!postResponse.ok) {
+        throw new Error("Error on the post request for apartments")
+      }
+      await postResponse.json()
+      getApartments()
+    } catch (error) {
+      alert("No homes! Something Went Wrong:", error.message)
+    }
+  }
+
+  const updateHomeStead = async (editHomestead, id) => {
+    try {
+      const patchResponse = await fetch(
+        `http://localhost:3000/apartments/${id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(editHomestead),
+        }
+      )
+      if (!patchResponse.ok) {
+        throw new Error("Error on the post request for apartments")
+      }
+      await patchResponse.json()
+      getApartments()
+    } catch (error) {
+      alert("No homes! Something Went Wrong:", error.message)
+    }
   }
 
   const deleteHomeStead = async (id) => {
-    console.log(id)
+    try {
+      const deleteResponse = await fetch(
+        `http://localhost:3000/apartments/${id}`,
+        {
+          method: "DELETE",
+        }
+      )
+      if (!deleteResponse.ok) {
+        throw new Error("Error on the post request for apartments")
+      }
+      getApartments()
+    } catch (error) {
+      alert("Ooops something went wrong", error.message)
+    }
   }
 
   return (
     <>
       <Header currentUser={currentUser} signOut={signOut} />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home apartments={apartments} />} />
         <Route path="/index" element={<Index apartments={apartments} />} />
         <Route
           path="/show/:id"
