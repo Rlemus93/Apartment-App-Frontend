@@ -23,6 +23,7 @@ const Index = ({ apartments }) => {
                 key={apartment.id}
                 style={{
                   width: "25rem",
+                  backgroundColor: "rgba(0,0,0,0.1)",
                 }}
               >
                 <img
@@ -49,7 +50,7 @@ const Index = ({ apartments }) => {
         </div>
         <div className="map-cont">
           <div className="map-canvas">
-            <Map />
+            <Map apartments={apartments} />
           </div>
         </div>
       </div>

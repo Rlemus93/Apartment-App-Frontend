@@ -166,7 +166,7 @@ const Edit = ({ apartments, updateHomeStead, currentUser }) => {
                 id="bathrooms"
                 name="bathrooms"
                 placeholder="Bathrooms"
-                type="number"
+                type="float"
                 min="0"
                 className="form-control"
                 {...register("bathrooms", { required: true })}
