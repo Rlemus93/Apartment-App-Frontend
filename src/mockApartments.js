@@ -9,6 +9,7 @@ let mockApartments = [
     price: "1800",
     bedrooms: 5,
     bathrooms: 3.0,
+    pets: "yes",
     about: "This is a trial run for what an about me will look",
     image:
       "https://blog.newhomesource.com/wp-content/uploads/2019/09/farmhouse.jpg.webp",

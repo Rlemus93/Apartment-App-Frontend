@@ -7,12 +7,19 @@ import {
   CardText,
   Button,
 } from "reactstrap"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
-const MyHomesteads = ({ apartments, currentUser }) => {
+const MyHomesteads = ({ apartments, currentUser, deleteHomeStead }) => {
+  const navigate = useNavigate()
   const myHomesteads = apartments.filter(
     (apt) => apt.user_id === currentUser.id
   )
+
+  const handledeleteHomeStead = (id) => {
+    alert("Are you sure you want to delete this homestead?")
+    deleteHomeStead(id)
+    navigate("/myhomesteads")
+  }
 
   return (
     <div className="myhomestead-cards-set">
@@ -39,10 +46,12 @@ const MyHomesteads = ({ apartments, currentUser }) => {
                 {apartment.bedrooms} beds | {apartment.bathrooms} bath | $
                 {apartment.price}
               </CardText>
-              <Link to="/edit">
+              <Link to={`/edit/${apartment.id}`}>
                 <Button>Edit</Button>
               </Link>
-              <Button>Delete</Button>
+              <Button onClick={() => handledeleteHomeStead(apartment.id)}>
+                Delete
+              </Button>
             </CardBody>
           </Card>
         ))}

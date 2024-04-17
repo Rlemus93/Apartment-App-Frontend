@@ -7,6 +7,7 @@ import Header from "./components/Header.js"
 import SignUp from "./pages/SignUp.js"
 import SignIn from "./pages/SignIn.js"
 import New from "./pages/New.js"
+import Edit from "./pages/Edit.js"
 import Home from "./pages/Home.js"
 import Index from "./pages/Index.js"
 import Show from "./pages/Show.js"
@@ -94,18 +95,33 @@ const App = () => {
     console.log(apartment)
   }
 
+  const updateHomeStead = async (apartment) => {
+    console.log(apartment)
+  }
+
+  const deleteHomeStead = async (id) => {
+    console.log(id)
+  }
+
   return (
     <>
       <Header currentUser={currentUser} signOut={signOut} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/index" element={<Index apartments={apartments} />} />
-        <Route path="/show/:id" element={<Show apartments={apartments} />} />
+        <Route
+          path="/show/:id"
+          element={<Show apartments={apartments} currentUser={currentUser} />}
+        />
         {currentUser && (
           <Route
             path="/myhomesteads"
             element={
-              <MyHomesteads apartments={apartments} currentUser={currentUser} />
+              <MyHomesteads
+                apartments={apartments}
+                currentUser={currentUser}
+                deleteHomeStead={deleteHomeStead}
+              />
             }
           />
         )}
@@ -116,6 +132,18 @@ const App = () => {
               <New
                 createHomeStead={createHomeStead}
                 currentUser={currentUser}
+              />
+            }
+          />
+        )}
+        {currentUser && (
+          <Route
+            path="/edit/:id"
+            element={
+              <Edit
+                updateHomeStead={updateHomeStead}
+                currentUser={currentUser}
+                apartments={apartments}
               />
             }
           />
