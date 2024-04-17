@@ -164,7 +164,7 @@ const New = ({ createHomeStead, currentUser }) => {
                 id="bathrooms"
                 name="bathrooms"
                 placeholder="Bathrooms"
-                type="number"
+                type="float"
                 min="0"
                 className="form-control"
                 {...register("bathrooms", { required: true })}

@@ -4,12 +4,15 @@
 
 * {
   margin: 0;
+  font-family: "PT Serif", serif;
+
 }
 
 /* nav/header */
 
 .navbar-nav {
-  height: 6vh;
+  height: 7vh;
+  background-color: white;
 }
 
 .nav-cont {
@@ -21,6 +24,7 @@
 .logo-cont {
   display: flex;
   align-items: center;
+  background-color: white;
 }
 
 .homestead-logo {
@@ -232,10 +236,7 @@ button:hover .button-text {
 
 .index-cont {
   display: flex;
-  min-height: calc(100dvh - 10dvh);
   justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
 }
 
 .content-wrapper {
@@ -251,14 +252,14 @@ button:hover .button-text {
 }
 
 .index-cards {
-  max-height: 80vh;
+  max-height: 80dvh;
   text-align: center; 
   flex: 1; 
-  padding-left: 40px;
+  padding-left: 15px;
   overflow-y: auto; 
   display: flex;
   flex-wrap: wrap; 
-  gap: 20px;
+  gap: 10px;
   z-index: 2;
 }
 
@@ -269,14 +270,8 @@ button:hover .button-text {
 
 .map-cont {
   flex: 2;
-  width: 75%;
   padding-right: 10px;
   z-index: 1;
-  height: 500px;
-}
-
-.card {
-  margin-bottom: 5px;
 }
 
 /* Show page */
