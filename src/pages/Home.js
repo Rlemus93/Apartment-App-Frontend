@@ -38,7 +38,6 @@ const Home = () => {
             <img
               alt={`Photo of house ${apartment.street}`}
               src={apartment.image}
-              className="card-img-top"
             />
             <CardBody>
               <CardTitle tag="h5">{apartment.street}</CardTitle>
@@ -53,7 +52,7 @@ const Home = () => {
           </Card>
         ))}
       </div>
-      <NavLink to="/index" className="learn-more">
+      <NavLink to="/apartments" className="learn-more">
         <button className="learn-more">
           <span className="circle" aria-hidden="true">
             <span className="icon arrow"></span>

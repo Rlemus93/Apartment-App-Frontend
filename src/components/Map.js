@@ -1,9 +1,9 @@
 import React from "react"
-import { GoogleMap, useJsApiLoader } from "@react-google-maps/api"
+import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api"
 
 const containerStyle = {
   width: "100%",
-  height: "400px",
+  height: "560px",
 }
 
 const center = {
@@ -25,8 +25,10 @@ const Map = () => {
         mapContainerStyle={containerStyle}
         center={center}
         zoom={6}
-        position={center}
-      />
+        // position={center}
+      >
+        <Marker position={center} />
+      </GoogleMap>
     </div>
   ) : null
 }
