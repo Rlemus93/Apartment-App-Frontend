@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form"
 import { Col, Form, FormGroup, Label, Row } from "reactstrap"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const New = ({ createHomeStead, currentUser }) => {
   const navigate = useNavigate()
