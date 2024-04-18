@@ -5,10 +5,6 @@ import homesteadLogo from "../assets/HomeSteadLiving.png"
 
 const SignIn = ({ signIn }) => {
   const navigate = useNavigate()
-  // const preloadedValues = {
-  //   email: "test1@example.com",
-  //   password: "password",
-  // }
   const {
     register,
     handleSubmit,
