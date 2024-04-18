@@ -19,8 +19,8 @@ const New = ({ createHomeStead, currentUser }) => {
   return (
     <div className="page-body">
       <div className="new-form">
-        <h3 className="title-header center-content">Add a New Homestead</h3>
         <Form onSubmit={handleSubmit(onSubmit)} className="form-size">
+          <h3 className="title-header center-content">Add a New Homestead</h3>
           <Row>
             <Col md={6}>
               <FormGroup>
