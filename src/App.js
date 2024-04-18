@@ -37,15 +37,20 @@ const App = () => {
         },
         body: JSON.stringify(user),
       })
-      if (!signInResponse) {
-        throw new Error(signInResponse.errors)
+
+      if (!signInResponse.ok) {
+        throw new Error("Invalid credentials") // Throw an error for invalid credentials
       }
+
       const payload = await signInResponse.json()
       localStorage.setItem("token", signInResponse.headers.get("Authorization"))
       localStorage.setItem("user", JSON.stringify(payload))
       setCurrentUser(payload)
+
+      return true // Return true for successful sign-in
     } catch (error) {
-      console.log("error fetching sign in data")
+      console.log("Error fetching sign-in data:", error)
+      return false // Return false for failed sign-in
     }
   }
 

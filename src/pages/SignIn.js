@@ -5,19 +5,23 @@ import homesteadLogo from "../assets/HomeSteadLiving.png"
 
 const SignIn = ({ signIn }) => {
   const navigate = useNavigate()
-  const preloadedValues = {
-    email: "test1@example.com",
-    password: "password",
-  }
+  // const preloadedValues = {
+  //   email: "test1@example.com",
+  //   password: "password",
+  // }
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ defaultValues: preloadedValues })
+  } = useForm()
 
-  const onSubmit = (formData) => {
-    signIn({ user: formData })
-    navigate("/")
+  const onSubmit = async (formData) => {
+    const success = await signIn({ user: formData })
+    if (success) {
+      navigate("/")
+    } else {
+      alert("Invalid user")
+    }
   }
 
   return (
