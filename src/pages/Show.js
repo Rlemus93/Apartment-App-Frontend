@@ -1,13 +1,6 @@
 import React from "react"
 import { useParams } from "react-router-dom"
-import {
-  Card,
-  CardBody,
-  CardTitle,
-  CardText,
-  CardImg,
-  Button,
-} from "reactstrap"
+import { Card, CardBody, CardTitle, CardText, CardImg } from "reactstrap"
 import { Link } from "react-router-dom"
 
 const Show = ({ apartments, currentUser }) => {
@@ -21,7 +14,7 @@ const Show = ({ apartments, currentUser }) => {
           <CardImg
             alt={`Photo of house ${apt.street}`}
             src={apt.image}
-            style={{ height: "50vh" }}
+            style={{ height: "60vh" }}
             top
             width="100%"
           />
@@ -37,19 +30,21 @@ const Show = ({ apartments, currentUser }) => {
               <small className="text-muted">Pets Allowed: {apt.pets}</small>
             </CardText>
           </CardBody>
-          <Link to="/index" className="learn-more">
-            <Button>Back</Button>
-          </Link>
-          {currentUser && currentUser.id === apt.user_id && (
-            <Link to={`/edit/${id}`} className="learn-more">
-              <Button>Edit</Button>
+          <div className="center-content">
+            <Link to="/index" className="learn-more">
+              <button className="new-edit-button">Back</button>
             </Link>
-          )}
+            {currentUser && currentUser.id === apt.user_id && (
+              <Link to={`/edit/${id}`} className="learn-more">
+                <button className="new-edit-button">Edit</button>
+              </Link>
+            )}
+          </div>
         </Card>
       </div>
       <div className="about-me-div">
-        <h1>About This Property</h1>
-        <p>{apt.about}</p>
+        <h1 style={{ fontWeight: "700" }}>About This Property</h1>
+        <p className="about-para">{apt.about}</p>
       </div>
     </div>
   )

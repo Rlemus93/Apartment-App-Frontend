@@ -14,7 +14,7 @@ test("renders Home component ", () => {
   expect(header).toBeInTheDocument()
 
   mockApartments.forEach((apartment) => {
-    const aptImage = screen.getByAltText(`Photo of house ${apartment.street}`)
+    const aptImage = screen.getByAltText(`house ${apartment.street}`)
     expect(aptImage).toBeInTheDocument()
     expect(aptImage).toHaveAttribute("src", apartment.image)
 

@@ -13,12 +13,12 @@ test("renders SignIn component", () => {
   const signInTitle = screen.getByText(/Sign In/)
   expect(signInTitle).toBeInTheDocument()
 
-  const username = screen.getByLabelText(/Enter Your Email/)
+  const username = screen.getByLabelText(/Email/)
   expect(username).toBeInTheDocument()
 
-  const password = screen.getByLabelText(/Enter Your Password/)
+  const password = screen.getByLabelText(/Password/)
   expect(password).toBeInTheDocument()
 
-  const submitButton = screen.getByText("Submit")
+  const submitButton = screen.getByText("Sign In")
   expect(submitButton).toBeInTheDocument()
 })

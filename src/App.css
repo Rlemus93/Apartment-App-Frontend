@@ -5,14 +5,13 @@
 * {
   margin: 0;
   font-family: "PT Serif", serif;
-
 }
 
 /* nav/header */
 
 .navbar-nav {
   height: 7vh;
-  background-color: white;
+  background-color: whitesmoke;
 }
 
 .nav-cont {
@@ -24,7 +23,6 @@
 .logo-cont {
   display: flex;
   align-items: center;
-  background-color: white;
 }
 
 .homestead-logo {
@@ -36,6 +34,7 @@
   align-items: center;
   gap: 20px;
   font-family: "PT Serif", serif;
+  margin-right: 1rem;
 }
 
 .nav-link {
@@ -177,6 +176,37 @@ button:hover .button-text {
   text-align: center;
 }
 
+.home-cont-2 {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100vw;
+}
+
+.home-cont-3 {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100vw;
+  padding-top: 2rem;
+}
+
+.home-cont-4 {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100vw;
+  height: 120vh;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
 .home-cards {
   display: flex;
   justify-content: center;
@@ -237,30 +267,35 @@ button:hover .button-text {
 .index-cont {
   display: flex;
   justify-content: center;
+  background-color: whitesmoke;
+  height: 93vh;
 }
 
 .content-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  width: 30%; 
+  align-items: center;
+  width: 30%;
 }
 
 .index-title {
   text-align: center;
-  margin-bottom: 30px;
+  background-color: whitesmoke;
+  margin-bottom: -0.5rem;
+  font-weight: 700;
 }
 
 .index-cards {
   max-height: 80dvh;
-  text-align: center; 
-  flex: 1; 
+  text-align: center;
+  flex: 1;
   padding-left: 15px;
-  overflow-y: auto; 
+  overflow-y: auto;
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   gap: 10px;
   z-index: 2;
+  margin-top: 3rem;
 }
 
 .card-img-top {
@@ -272,6 +307,7 @@ button:hover .button-text {
   flex: 2;
   padding-right: 10px;
   z-index: 1;
+  margin-top: 3rem;
 }
 
 /* Show page */
@@ -279,29 +315,124 @@ button:hover .button-text {
 .about-me-div {
   float: right;
   padding: 2rem;
-  width: 30%;
+  height: 50vh;
+  width: 40vw;
   text-align: center;
+  border: none;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  margin-left: 1rem;
+}
+
+.about-para {
+  font-size: 1.3rem;
 }
 
 .card-div {
-  width: 70%;
+  height: 60vh;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  box-shadow: 20px 40px 60px rgba(0, 0, 0, 0.5);
 }
 
 .show-cont {
   display: flex;
   padding: 5dvh;
+  background-color: #cba86b;
+  height: 93vh;
 }
 
-/* Sign Up Form */
+/* Sign In and Sign Up Form  */
 
-.form-cont {
+.edit-cont {
+  height: 93vh;
   text-align: center;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2vw;
-  font-size: 2vh;
+  justify-content: center;
+  padding-top: 5rem;
+  background-color: var(--clr-bckgrnd-gold);
+}
+
+.sign-in-form,
+.sign-up-form {
+  height: 80%;
+  width: 40%;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding-top: 8rem;
+}
+
+.sign-in-form,
+.sign-up-form {
+  width: 90%; /* Take up the full width of the viewport */
+  height: 90%; /* Take up the full height of the viewport */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  background-color: whitesmoke;
+}
+
+.sign-in-title {
+  font-weight: 800;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+  font-size: 3rem;
+  position: absolute;
+  top: 15vh;
+}
+
+.sign-up-logo {
+  width: 18rem;
+}
+
+/* MyHomesteads page  */
+
+.my-homestead-title {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-top: 2rem;
   font-weight: 700;
+}
+
+.myhomestead-cards-set {
+  background-color: whitesmoke;
+  height: 93vh;
+}
+
+/* New and Edit */
+
+.center-content {
+  display: flex;
+  justify-content: center;
+}
+
+.new-edit-button {
+  border-radius: 0.375rem;
+  padding: 10px 20px;
+  background-color: #cba86b;
+  color: black;
+  width: 10vw;
+  margin: 1rem;
+}
+
+.new-form {
+  margin-top: 4rem;
+  height: 80%;
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+}
+
+.page-body {
+  background-color: #cba86b;
+  height: 93vh;
+  display: flex;
+  justify-content: center;
 }
 
 .title-header {
@@ -310,8 +441,4 @@ button:hover .button-text {
   font-size: 5vh;
   font-weight: 600;
   letter-spacing: 5px;
-}
-
-.form-control {
-  width: 50dvw;
 }
