@@ -1,13 +1,6 @@
 import React from "react"
 
-import {
-  Card,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  CardText,
-  Button,
-} from "reactstrap"
+import { Card, CardBody, CardTitle, CardSubtitle, CardText } from "reactstrap"
 import { Link } from "react-router-dom"
 import Map from "../components/Map"
 
@@ -27,7 +20,7 @@ const Index = ({ apartments }) => {
                 }}
               >
                 <img
-                  alt={`Photo of house ${apartment.street}`}
+                  alt={`house ${apartment.street}`}
                   src={apartment.image}
                   className="card-img-top"
                 />

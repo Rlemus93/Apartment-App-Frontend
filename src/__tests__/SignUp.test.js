@@ -22,6 +22,6 @@ test("renders SignUp component", () => {
   const passwordConfirmation = screen.getByLabelText(/Password Confirmation/)
   expect(passwordConfirmation).toBeInTheDocument()
 
-  const submitButton = screen.getByText("Submit")
+  const submitButton = screen.getByText("Sign Up")
   expect(submitButton).toBeInTheDocument()
 })

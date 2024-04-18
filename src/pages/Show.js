@@ -43,7 +43,7 @@ const Show = ({ apartments, currentUser }) => {
         </Card>
       </div>
       <div className="about-me-div">
-        <h1>About This Property</h1>
+        <h1 style={{ fontWeight: "700" }}>About This Property</h1>
         <p className="about-para">{apt.about}</p>
       </div>
     </div>
