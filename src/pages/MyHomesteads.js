@@ -45,7 +45,6 @@ const MyHomesteads = ({ apartments, currentUser, deleteHomeStead }) => {
               </Link>
               <button
                 className="new-edit-button"
-                style={{ marginLeft: "0.5rem" }}
                 onClick={() => handledeleteHomeStead(apartment.id)}
               >
                 Delete

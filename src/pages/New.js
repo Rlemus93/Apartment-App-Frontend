@@ -250,6 +250,9 @@ const New = ({ createHomeStead, currentUser }) => {
             </FormGroup>
           </Col>
           <div className="center-content">
+            <Link to="/myhomesteads">
+              <button className="new-edit-button">Back</button>
+            </Link>
             <button className="new-edit-button" onClick={handleSubmit}>
               Submit
             </button>
