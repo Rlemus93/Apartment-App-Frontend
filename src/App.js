@@ -1,7 +1,5 @@
 import "./App.css"
 import React, { useState, useEffect } from "react"
-// import mockUsers from "./mockUsers.js"
-// import mockApartments from "./mockApartments.js"
 import { Routes, Route } from "react-router-dom"
 import Header from "./components/Header.js"
 import SignUp from "./pages/SignUp.js"

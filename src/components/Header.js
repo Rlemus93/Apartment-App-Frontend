@@ -17,6 +17,9 @@ const Header = ({ signOut, currentUser }) => {
         </NavLink>
       </div>
       <div className="nav-links">
+        <Link to="/" className="nav-link">
+          Home
+        </Link>
         <NavLink to="/index" className="nav-link">
           Available Homesteads
         </NavLink>
@@ -40,7 +43,6 @@ const Header = ({ signOut, currentUser }) => {
               padding: "10px 20px",
               backgroundColor: "#CBA86B",
               color: "black",
-              border: "none",
             }}
           >
             Sign Up
