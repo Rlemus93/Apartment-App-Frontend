@@ -41,7 +41,7 @@ const Index = ({ apartments }) => {
                     {apartment.price}
                   </CardText>
                   <Link to={`/show/${apartment.id}`} className="learn-more">
-                    <Button>See More</Button>
+                    <button className="new-edit-button">See More</button>
                   </Link>
                 </CardBody>
               </Card>

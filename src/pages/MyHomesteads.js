@@ -1,12 +1,5 @@
 import React from "react"
-import {
-  Card,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  CardText,
-  Button,
-} from "reactstrap"
+import { Card, CardBody, CardTitle, CardSubtitle, CardText } from "reactstrap"
 import { Link, useNavigate } from "react-router-dom"
 
 const MyHomesteads = ({ apartments, currentUser, deleteHomeStead }) => {
@@ -23,13 +16,14 @@ const MyHomesteads = ({ apartments, currentUser, deleteHomeStead }) => {
 
   return (
     <div className="myhomestead-cards-set">
-      <h1 className="index-title">Your Homesteads</h1>
+      <h1 className="my-homestead-title">Your Homesteads</h1>
       <div className="index-cards">
         {myHomesteads?.map((apartment) => (
           <Card
             key={apartment.id}
             style={{
               width: "25rem",
+              backgroundColor: "rgba(0,0,0,0.1)",
             }}
           >
             <img
@@ -47,17 +41,30 @@ const MyHomesteads = ({ apartments, currentUser, deleteHomeStead }) => {
                 {apartment.price}
               </CardText>
               <Link to={`/edit/${apartment.id}`}>
-                <Button>Edit</Button>
+                <button className="new-edit-button">Edit</button>
               </Link>
-              <Button onClick={() => handledeleteHomeStead(apartment.id)}>
+              <button
+                className="new-edit-button"
+                style={{ marginLeft: "0.5rem" }}
+                onClick={() => handledeleteHomeStead(apartment.id)}
+              >
                 Delete
-              </Button>
+              </button>
             </CardBody>
           </Card>
         ))}
       </div>
-      <Link to="/new">
-        <Button>Add Homestead</Button>
+      <Link to="/new" style={{ textDecoration: "none" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: "2rem",
+          }}
+        >
+          <button className="new-edit-button">Add Homestead</button>
+        </div>
       </Link>
     </div>
   )

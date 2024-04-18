@@ -94,7 +94,7 @@ const SignUp = ({ signUp }) => {
           </button>
           <p>
             Aleady have an account?{" "}
-            <Link to="/signin" style={{ color: "#cba86b" }}>
+            <Link to="/signup" style={{ color: "#cba86b" }}>
               Signin
             </Link>
           </p>

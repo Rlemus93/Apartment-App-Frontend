@@ -35,6 +35,7 @@ const Home = ({ apartments }) => {
               key={apartment.id}
               style={{
                 width: "18rem",
+                backgroundColor: "rgba(0,0,0,0.1)",
               }}
             >
               <img
@@ -218,7 +219,7 @@ const Home = ({ apartments }) => {
               }}
               tag="h5"
             >
-              Self-Sufficiency:
+              Self-Sufficiency
             </CardTitle>
             <CardText
               style={{ fontFamily: "PT Serif, serif", fontSize: "1.4rem" }}
