@@ -91,8 +91,9 @@ const Home = ({ apartments }) => {
           <Card
             style={{
               width: "45rem",
-              backgroundColor: "lightgrey",
+              backgroundColor: "#e0e0e0",
               border: "none",
+              borderRadius: "0%",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
@@ -139,7 +140,7 @@ const Home = ({ apartments }) => {
               Become a Member
             </Link>
           </Card>
-          <Card style={{ width: "45rem" }}>
+          <Card style={{ width: "45rem", borderRadius: "0%" }}>
             <img alt="Sample" src={farmhouse2} />
           </Card>
         </div>
@@ -160,8 +161,9 @@ const Home = ({ apartments }) => {
           <Card
             style={{
               width: "45rem",
-              backgroundColor: "lightgrey",
+              backgroundColor: "#e0e0e0",
               border: "none",
+              borderRadius: "0%",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
@@ -187,19 +189,20 @@ const Home = ({ apartments }) => {
               overall well-being.
             </CardText>
           </Card>
-          <Card style={{ width: "45rem" }}>
+          <Card style={{ width: "45rem", borderRadius: "0%" }}>
             <img alt="Sample" src={farm} />
           </Card>
         </div>
         <div style={{ display: "flex" }}>
-          <Card style={{ width: "45rem" }}>
+          <Card style={{ width: "45rem", borderRadius: "0%" }}>
             <img alt="Sample" src={cows} />
           </Card>
           <Card
             style={{
               width: "45rem",
-              backgroundColor: "lightgrey",
+              backgroundColor: "#e0e0e0",
               border: "none",
+              borderRadius: "0%",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
